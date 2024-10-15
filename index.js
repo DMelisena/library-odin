@@ -51,3 +51,28 @@ inputForm.addEventListener('submit',function(event){
   shelf.appendChild(newBook);
 })
 
+// TODO:
+// 1. Change all the description to a object
+// 2. make an array consisting of book names
+// 3. Make a function that generates 
+// the ideal would be that this will declare 
+function Book(name,author,pages,read){
+  this.name = name;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+  this.info= function(){
+    if (this.read==true){
+      var isread = "finished."
+    }
+    else{
+      var isread = "not yet read."
+    }
+    console.log(this.name + " by "+this.author+ " consist of "+this.pages+" is "+isread)
+  };
+  this.add = function(){
+  };
+}
+
+const ulysses = new Book("Ulysses","James Joyce",732,false)
+ulysses.info()
