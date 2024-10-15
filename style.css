@@ -93,8 +93,15 @@ body>*{
   grid-column:2/3;
   padding:25px;
   background: var(--color2);
+}
+
+#input{
   display:flex;
   flex-flow:column;
+}
+
+#input>*{
+  margin:5px 0;
 }
 
 .submit-button{
