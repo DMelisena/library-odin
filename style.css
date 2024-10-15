@@ -9,6 +9,7 @@
   --color6: rgb(64, 224, 208);
   /* font-family: Helvetica; */
   font-family: Inter, sans-serif;
+  color:white;
 }
 
 body {
@@ -71,3 +72,35 @@ li {
 }
 
 /*}}}*/
+
+body{
+display:flex;
+flex-flow:column;
+align-items: center;
+}
+
+.input-section{
+  padding:25px;
+  border-radius:10px;
+  margin:30px;
+  background: var(--color2);
+  display:flex;
+  flex-flow:column;
+}
+
+.submit-button{
+  align-self:flex-end;
+  padding:0 20px;
+}
+
+.title{
+  align-self:center;
+  font-size:20px;
+  font-weight:900;
+}
+
+.input-section>*{
+  padding:5px;
+}
+
+
