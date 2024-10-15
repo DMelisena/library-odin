@@ -83,3 +83,14 @@ inputForm.addEventListener('submit',function(event){
 // 5. load the data from my personal server
 
 const ulysses = new Book("Ulysses","James Joyce",732,false)
+const feynman = new Book("The Feynman Lecture on Physics","Richard Feynman",732,false)
+const solitude = new Book("One Hundred Years of Solitude","Gabriel Garcia Marquez",732,false)
+const warAnd = new Book("War and Peace","Tolstoy",732,false)
+const divine = new Book("Divine Comedy","Dante",732,false)
+const alaska = new Book("Looking for Alaska","John Green",732,false)
+
+var arr = [ulysses,feynman,solitude,warAnd,divine,alaska]
+
+for (let i=0; i<arr.length; i++){
+  arr[i].add()
+}
