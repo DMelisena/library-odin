@@ -74,15 +74,24 @@ li {
 /*}}}*/
 
 body{
-display:flex;
-flex-flow:column;
-align-items: center;
+  display:grid;
+  flex-flow:column;
+  align-items: center;
+  grid-template-columns: 1fr max(400px,60%) 1fr;
+  gap:10px;
+  padding:20px;
+}
+
+input[type="text"]{
+  width:100%;
+}
+body>*{
+  border-radius:10px;
 }
 
 .input-section{
+  grid-column:2/3;
   padding:25px;
-  border-radius:10px;
-  margin:30px;
   background: var(--color2);
   display:flex;
   flex-flow:column;
@@ -91,6 +100,7 @@ align-items: center;
 .submit-button{
   align-self:flex-end;
   padding:0 20px;
+  margin:10px 0 0;
 }
 
 .title{
@@ -103,4 +113,55 @@ align-items: center;
   padding:5px;
 }
 
+.help{
+  font-size: 14px;
+  display:none;
+  color:red;
+}
 
+.form-row input:invalid + .help {
+  display: block;
+}
+
+h1{
+  font-size:15px;
+}
+
+.booklist{
+  grid-column:2/3;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:10px;
+}
+.book{
+  display:grid;
+  justify-content: space-between;
+  padding:20px;
+  background-color: var(--color2);
+  border-radius:10px;
+}
+.details{
+  display: grid;
+  grid-column:1/2;
+}
+.details{
+  display: grid;
+  grid-column:1/2;
+}
+
+.delete{
+  grid-column:2/3;
+}
+
+.huge-title{
+  grid-column:2/3;
+  font-size:25px;
+  font-weight:900;
+}
+
+button{
+  height:30px;
+  width:30px;
+  background-color: var(--color2);
+  border: var(--color2);
+}
