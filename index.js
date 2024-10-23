@@ -38,24 +38,22 @@ function Book(title,author,pages,read){
 
     newBook.appendChild(newDetails);
 
-    const button = document.createElement('button');
-    button.className = 'delete';
+    const delButton = document.createElement('button');
+    delButton.className = 'delete';
     const image = document.createElement('img');
     image.src = 'img/icons8-trash-48.png';
 
-    button.appendChild(image);
-    newBook.appendChild(button);
+    delButton.onclick = function(){
+      const parentDiv = this.parentNode; 
+      parentDiv.remove()
+    }
+
+    delButton.appendChild(image);
+    newBook.appendChild(delButton);
     shelf.appendChild(newBook);
   };
 }
 
-const deleteButtons = document.querySelectorAll(".delete");
-deleteButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    const parentDiv = this.parentNode; 
-    parentDiv.remove()
-  });
-});
 
 inputForm.addEventListener('submit',function(event){
   event.preventDefault(); // Prevent default form submission behavior
