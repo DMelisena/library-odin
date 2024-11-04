@@ -9,6 +9,7 @@
   --color6: rgb(64, 224, 208);
   /* font-family: Helvetica; */
   font-family: Inter, sans-serif;
+  color:grey;
 }
 
 body {
@@ -71,3 +72,18 @@ li {
 }
 
 /*}}}*/
+
+body{
+  display:grid;
+  grid-template-columns: 1fr max(400px,60%) 1fr;
+}
+
+#shelf{
+  grid-column: 2/3;
+}
+.section{
+  display:grid;
+  gap:20px;
+  justify-content: center;
+  text-align: center;
+ }
