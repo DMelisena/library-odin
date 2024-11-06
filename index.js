@@ -1,5 +1,22 @@
 const inputForm = document.getElementById('input');
-const shelf = document.getElementById('shelf');
+
+inputForm.addEventListener('submit',function(event){
+  event.preventDefault(); // Prevent default form submission behavior
+  const ulysses = new Book("Ulysses","James Joyce",732,false)
+  ulysses.info()
+
+    // Get form input values
+    const titleInput = document.getElementById('title');
+    const authorInput = document.getElementById('author');
+    const pagesInput = document.getElementById('pages');
+
+    const newBooksdf = new Book(`${titleInput.value}`,`${authorInput.value}`,`${pagesInput.value}`)
+    newBooksdf.info()
+    newBooksdf.add()
+    // Clear form inputs
+    titleInput.value = '';
+    authorInput.value = '';
+})
 
 class Book{
   constructor (title,author,pages,read){
@@ -22,6 +39,7 @@ class Book{
     alert(this.lastNameIs)
   }
   add(){
+    const shelf = document.getElementById('shelf');
     const newBook = document.createElement('div');
     newBook.className = 'book'
     const newDetails = document.createElement('div');
@@ -55,24 +73,6 @@ class Book{
   };
 }
 
-inputForm.addEventListener('submit',function(event){
-  event.preventDefault(); // Prevent default form submission behavior
-  const ulysses = new Book("Ulysses","James Joyce",732,false)
-  ulysses.info()
-
-    // Get form input values
-    const titleInput = document.getElementById('title');
-    const authorInput = document.getElementById('author');
-    const pagesInput = document.getElementById('pages');
-
-    const newBooksdf = new Book(`${titleInput.value}`,`${authorInput.value}`,`${pagesInput.value}`)
-    newBooksdf.info()
-    newBooksdf.add()
-    // Clear form inputs
-    titleInput.value = '';
-    authorInput.value = '';
-})
-
 // TODO:
 // 1. Change all the description to an object function V
 // 2. Make a function that generates new div for new book V
@@ -80,16 +80,19 @@ inputForm.addEventListener('submit',function(event){
 // 4. log the inserted data to my personal server
 // 5. load the data from my personal server
 
-const ulysses = new Book("Ulysses","James Joyce",732,false)
-const feynman = new Book("The Feynman Lecture on Physics","Richard Feynman",732,false)
-const solitude = new Book("One Hundred Years of Solitude","Gabriel Garcia Marquez",732,false)
-const warAnd = new Book("War and Peace","Tolstoy",732,false)
-const divine = new Book("Divine Comedy","Dante",732,false)
-const alaska = new Book("Looking for Alaska","John Green",732,false)
+const gameFlow = (function(){
+  const ulysses = new Book("Ulysses","James Joyce",732,false)
+  const feynman = new Book("The Feynman Lecture on Physics","Richard Feynman",732,false)
+  const solitude = new Book("One Hundred Years of Solitude","Gabriel Garcia Marquez",732,false)
+  const warAnd = new Book("War and Peace","Tolstoy",732,false)
+  const divine = new Book("Divine Comedy","Dante",732,false)
+  const alaska = new Book("Looking for Alaska","John Green",732,false)
 
-var arr = [ulysses,feynman,solitude,warAnd,divine,alaska]
+  var arr = [ulysses,feynman,solitude,warAnd,divine,alaska]
 
-for (let i=0; i<arr.length; i++){
-  arr[i].add()
-}
+  for (let i=0; i<arr.length; i++){
+    arr[i].add()
+  }
+})();
+
 
